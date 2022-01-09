@@ -1,0 +1,59 @@
+.hederContainer {
+  height: 5rem;
+  border-bottom: 1px solid var(--gray-800);
+  
+  &.lightMode{
+    background: var(--white);
+  }
+}
+
+.hederContent {
+  padding: 0 2rem;
+  max-width: 1120px;
+  height: 5rem;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  nav {
+    margin-left: 5rem;
+    height: 5rem;
+
+    a {
+      display: inline-block;
+      position: relative;
+      padding: 0 0.5rem;
+      height: 5rem;
+      line-height: 5rem;
+      color: var(--gray-300);
+      transition: color 0.2s;
+
+      
+      & + a {
+        margin-left: 2rem;
+      }
+
+      &.TextLightMode{
+        color: var(--black);
+      }
+
+      &:hover {
+        color: var(--white);
+      }
+
+      &.active {
+        color: var(--yellow-500);
+        font-weight: bold;
+      }
+    }
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
