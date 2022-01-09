@@ -1,0 +1,15 @@
+.changeLayoutButton{
+    background-color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 2rem;
+    border: none;
+    color: var(--white);
+    svg{
+        width:15px;
+        height:15px;
+    }
+    &.lightMode{
+        background: var(--gray-300);
+    }
+}
