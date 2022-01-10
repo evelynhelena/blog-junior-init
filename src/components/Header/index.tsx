@@ -11,7 +11,7 @@ export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
     return (
         <header className={classnames(styles.hederContainer, !layoutType ? styles.lightMode : "")}>
             <div className={styles.hederContent}>
-                <img src={layoutType ? '/images/logo-junior-init.png' : '/images/logo-junior-init-dark.png'} alt="Jumior init" />
+                <img src={layoutType ? '/images/logo-junior-init.png' : '/images/logo-junior-init-dark.png'} alt="Junior init" />
                 <nav>
                     <a className={classnames(styles.active, !layoutType ? styles.TextLightMode : "")}>Home</a>
                     <a className={classnames(!layoutType ? styles.TextLightMode : "")}>Sobre nós</a>
