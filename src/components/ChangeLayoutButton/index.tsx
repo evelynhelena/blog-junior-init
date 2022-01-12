@@ -1,19 +1,16 @@
-import styles from "./styles.module.scss";
-import { FaMoon } from "react-icons/fa"
-import { FaSun } from "react-icons/fa"
-import classnames from "classnames";
+import { IconButton } from "@mui/material";
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-interface  ChangeLayoutButtonProps{
+interface ChangeLayoutButtonProps {
     layoutType: boolean;
     handleChangeLayputMode: () => void;
 }
 
-export function ChangeLayoutButton({layoutType, handleChangeLayputMode}:ChangeLayoutButtonProps) {
+export function ChangeLayoutButton({ layoutType, handleChangeLayputMode }: ChangeLayoutButtonProps) {
     return (
-        <button
-            className={classnames(styles.changeLayoutButton, !layoutType ? styles.lightMode : "")}
-            onClick={handleChangeLayputMode}>
-                {layoutType ? <FaSun /> : <FaMoon/>}
-        </button>
+        <IconButton aria-label="Tema" onClick={handleChangeLayputMode}>
+            {layoutType ? <Brightness4Icon /> : <Brightness7Icon />}
+        </IconButton>
     )
 }

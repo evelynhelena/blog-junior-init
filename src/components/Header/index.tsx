@@ -1,40 +1,3 @@
-/*import { ChangeLayoutButton } from "../ChangeLayoutButton";
-import classnames from 'classnames';
-import styles from "./styles.module.scss";
-
-interface  ChangeLayoutButtonProps{
-    layoutType: boolean;
-    changeLayput: () => void;
-}
-
-export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
-    return (
-        <header className={classnames(styles.hederContainer, !layoutType ? styles.lightMode : "")}>
-            <div className={styles.hederContent}>
-                <img src={layoutType ? '/images/logo-junior-init.png' : '/images/logo-junior-init-dark.png'} alt="Junior init" />
-                <nav>
-                    <a className={classnames(styles.active, !layoutType ? styles.TextLightMode : "")}>Home</a>
-                    <a className={classnames(!layoutType ? styles.TextLightMode : "")}>Sobre nós</a>
-
-                </nav>
-                <ChangeLayoutButton layoutType={layoutType} handleChangeLayputMode={changeLayput}/>
-            </div>
-        </header>
-    )
-}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -44,20 +7,18 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { ChangeLayoutButton } from '../ChangeLayoutButton';
 
 const pages = ['Home', 'Sobre Nós'];
 
-interface  ChangeLayoutButtonProps{
-    layoutType: boolean;
-    changeLayput: () => void;
+interface ChangeLayoutButtonProps {
+  layoutType: boolean;
+  changeLayput: () => void;
 }
 
-export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
+export function Header({ layoutType, changeLayput }: ChangeLayoutButtonProps) {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -70,7 +31,7 @@ export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -79,7 +40,7 @@ export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-             <img src={layoutType ? '/images/logo-junior-init.png' : '/images/logo-junior-init-dark.png'} alt="Junior init" />
+            <img src={layoutType ? '/images/logo-junior-init.png' : '/images/logo-junior-init-dark.png'} alt="Junior init" />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -113,7 +74,7 @@ export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography color="inherit"  textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -124,7 +85,7 @@ export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            LOGO
+            <img src={layoutType ? '/images/logo-junior-init.png' : '/images/logo-junior-init-dark.png'} alt="Junior init" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -139,10 +100,8 @@ export function Header({layoutType, changeLayput} : ChangeLayoutButtonProps) {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Mudar Tema">
-                <ChangeLayoutButton layoutType={layoutType} handleChangeLayputMode={changeLayput}/>
-            </Tooltip>
-        </Box>
+            <ChangeLayoutButton layoutType={layoutType} handleChangeLayputMode={changeLayput} />
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

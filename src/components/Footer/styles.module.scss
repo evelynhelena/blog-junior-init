@@ -1,20 +1,17 @@
-.footerContainer{
-    height: 8rem;
-    margin: 0 auto;
-    background-color: var(--gray-1000);
-    text-align: center;
-    .footerContent{
-        display: flex;
-        padding: 2rem;
-        justify-content: center;
-        align-items: center;
-            
-        svg{
-            font-size: 1.5rem;
-            margin: 0 10px;
-        }
+.footerContent {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  .typography {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      font-size: 1.5rem;
+      margin: 0 10px;
     }
-    p{
-        font-size: 0.8rem;
-    }
+  }
 }
