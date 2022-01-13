@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ChangeLayoutButton } from '../ChangeLayoutButton';
+import Link from 'next/link';
 
 const pages = ['Home', 'Sobre Nós'];
 
@@ -74,7 +75,9 @@ export function Header({ layoutType, changeLayput }: ChangeLayoutButtonProps) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography color="inherit"  textAlign="center">{page}</Typography>
+                  <Link href="http://localhost:3000/aboutUs">
+                    <Typography color="inherit" textAlign="center">{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -92,9 +95,11 @@ export function Header({ layoutType, changeLayput }: ChangeLayoutButtonProps) {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'inherit', display: 'block' }}
               >
-                {page}
+                <Link href="http://localhost:3000/aboutUs">
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>

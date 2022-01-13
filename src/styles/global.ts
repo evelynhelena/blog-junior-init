@@ -1,3 +1,8 @@
+import { createGlobalStyle } from 'styled-components'
+
+
+
+export const GlobalStyle = createGlobalStyle`
 *{
     margin: 0;
     padding: 0;
@@ -35,7 +40,7 @@
 }
 
 body{
-    background: var(--gray-900);
+    background: ${props => void console.log(props) || 'white'};
     color: var(--white);
 }
 
@@ -50,4 +55,8 @@ button{
 a{
     color: inherit;
     text-decoration: none;
+}
+`
+GlobalStyle.defaultProps ={
+ 
 }

@@ -29,8 +29,6 @@ export default function Home() {
         <CardPost/>
         <CardPost/>
       </section>
-
-      <Footer/>
     </>
   )
 }
