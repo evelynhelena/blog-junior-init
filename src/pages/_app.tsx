@@ -7,11 +7,7 @@ import { GlobalStyle } from "../styles/global";
 import { PaletteMode } from "@mui/material";
 import React from "react";
 import { Footer } from "../components/Footer";
-interface teste {
-  palette:{
-      mode: "dark"
-  }
-}
+
 function MyApp({ Component, pageProps }: AppProps) {
 
   const getDesignTokens = (mode: PaletteMode) => ({
@@ -30,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           primary: grey,
           divider: grey[900],
         }),
-    },
+    }
   });
   const [mode, setMode] = React.useState<PaletteMode>('dark');
   const colorMode = React.useMemo(
@@ -45,9 +41,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 
   // Update the theme only if the mode changes
-  const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  let theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
   console.log(theme);
-
   return (
     <>
       <ThemeProvider theme={theme}>

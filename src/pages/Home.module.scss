@@ -3,7 +3,6 @@
     background-color: var(--blue-900);
     background-image: url(../../public/images/bg.gif);
     .container{
-        max-width: 1120px;
         padding: 0 2rem;
         display:flex;
         align-items: center;
@@ -39,9 +38,9 @@
 }
 
 
+
+
 .sectionPost{
-    max-width: 1120px;
-    padding: 0 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;

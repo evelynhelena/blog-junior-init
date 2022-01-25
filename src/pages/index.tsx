@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import Head from "next/head";
 import { CardPost } from "../components/CardPost";
 import { Footer } from "../components/Footer";
@@ -11,15 +12,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.container}>
+        <Container className={styles.container}>
           <section className={styles.sectionContent}>
             <h1>Noticias sobre o <br />mundo do<span> JavaScript</span></h1>
             <SubscribeButton />
           </section>
           <img src="/images/rocket.gif" alt="Foguete" />
-        </div>
+        </Container>
       </main>
-
+    <Container>
       <section className={styles.sectionPost}>
         <CardPost/>
         <CardPost/>
@@ -29,6 +30,8 @@ export default function Home() {
         <CardPost/>
         <CardPost/>
       </section>
+    </Container>
+
     </>
   )
 }
